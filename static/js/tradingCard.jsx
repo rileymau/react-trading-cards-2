@@ -76,10 +76,15 @@ function TradingCardContainer() {
 
   //added with step 2 to useState in loop. 
   //jsonify on servery.py, receive as .json on jsx page.  
-  // response linee 82 feeds in to date line 83.  
+  // response line 82 feeds in to date line 83.  
   React.useEffect(() => {
     fetch('/cards.json')
+
+    // this gets the json from server.py
     .then((response) => response.json())
+    
+    //this will give us a set of dictionaries, which are the values 
+    //of the key 'cards'
     .then((data) => setCards(data.cards))
   }, [])
 
